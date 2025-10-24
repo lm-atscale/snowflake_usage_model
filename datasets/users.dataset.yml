@@ -1,0 +1,26 @@
+unique_name: users.dataset
+object_type: dataset
+label: users
+connection_id: snowflake_partner.connection
+sql: "select NAME, FIRST_NAME, LAST_NAME, EMAIL, CREATED_ON, LOGIN_NAME, LAST_SUCCESS_LOGIN,\
+  \ TYPE from SNOWFLAKE.ACCOUNT_USAGE.users"
+
+columns:
+  - name: CREATED_ON
+    data_type: datetime
+  - name: DISPLAY_NAME
+    data_type: string
+  - name: EMAIL
+    data_type: string
+  - name: FIRST_NAME
+    data_type: string
+  - name: LAST_NAME
+    data_type: string
+  - name: LAST_SUCCESS_LOGIN
+    data_type: datetime
+  - name: LOGIN_NAME
+    data_type: string
+  - name: NAME
+    data_type: string
+  - name: TYPE
+    data_type: string
