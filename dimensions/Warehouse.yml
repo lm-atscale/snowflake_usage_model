@@ -1,0 +1,24 @@
+unique_name: Warehouse
+object_type: dimension
+label: Warehouse
+type: standard
+
+hierarchies:
+
+  - unique_name: Warehouse
+    label: Warehouse
+    folder: Resources
+
+    levels:
+
+      - unique_name: Warehouse
+
+level_attributes:
+
+  - unique_name: Warehouse
+    label: Warehouse
+    dataset: warehouse_events_history.dataset
+    key_columns:
+      - WAREHOUSE_ID
+    name_column: WAREHOUSE_NAME
+    sort_column: WAREHOUSE_NAME

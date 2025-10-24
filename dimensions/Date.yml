@@ -1,0 +1,67 @@
+unique_name: Date
+object_type: dimension
+label: Date
+type: time
+
+hierarchies:
+
+  - unique_name: Date Hierarchy
+    label: Date Hierarchy
+    filter_empty: "yes"
+    folder: Dates
+
+    levels:
+
+      - unique_name: Year
+
+      - unique_name: Month
+
+        secondary_attributes:
+
+          - unique_name: Month Number
+            label: Month Number
+            folder: Dates
+            dataset: dates.dataset
+            key_columns:
+              - MONTH_NUMBER
+            name_column: MONTH_NUMBER
+            sort_column: MONTH_NUMBER
+            allowed_calcs_for_dma:
+              - Lag
+              - Range
+              - Siblings
+
+      - unique_name: Date
+
+level_attributes:
+
+  - unique_name: Date
+    label: Date
+    dataset: dates.dataset
+    key_columns:
+      - USE_DATE
+    name_column: USE_DATE
+    time_unit: day
+
+  - unique_name: Month
+    label: Month
+    description: Sorted using a descending Month number 12= Jan -  1 =Dec
+    dataset: dates.dataset
+    key_columns:
+      - Month
+      - Year
+    name_column: Month
+    sort_column: MONTH_NUMBER_DESC
+    time_unit: month
+
+  - unique_name: Year
+    label: Year
+    dataset: dates.dataset
+    key_columns:
+      - Year
+    name_column: Year
+    time_unit: year
+
+modeler_metadata:
+  version: "0"
+  modified: "false"

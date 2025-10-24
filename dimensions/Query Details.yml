@@ -1,0 +1,106 @@
+unique_name: Query Details
+object_type: dimension
+label: Query Details
+type: standard
+
+hierarchies:
+
+  - unique_name: Query Details
+    label: Query Details
+    filter_empty: "yes"
+    folder: Query Details
+
+    levels:
+
+      - unique_name: Query Type
+
+      - unique_name: Query ID
+
+        secondary_attributes:
+
+          - unique_name: Atscale Query Flag
+            label: Atscale Query Flag
+            dataset: Query Details Dimension.dataset
+            key_columns:
+              - ATSCALE_QUERY_FLAG
+            name_column: ATSCALE_QUERY_FLAG
+            sort_column: ATSCALE_QUERY_FLAG
+            allowed_calcs_for_dma:
+              - Lag
+              - Range
+              - Siblings
+
+          - unique_name: Atscale Query ID
+            label: Atscale Query ID
+            dataset: Query Details Dimension.dataset
+            key_columns:
+              - ATSCALE_QUERY_ID
+            name_column: ATSCALE_QUERY_ID
+            sort_column: ATSCALE_QUERY_ID
+            allowed_calcs_for_dma:
+              - Lag
+              - Range
+              - Siblings
+
+          - unique_name: Atscale User Name
+            label: Atscale User Name
+            dataset: Query Details Dimension.dataset
+            key_columns:
+              - ATSCALE_USERNAME
+            name_column: ATSCALE_USERNAME
+            sort_column: ATSCALE_USERNAME
+            allowed_calcs_for_dma:
+              - Lag
+              - Range
+              - Siblings
+
+          - unique_name: Query Tag_2
+            label: Query Tag
+            dataset: Query Details Dimension.dataset
+            key_columns:
+              - QUERY_TAG
+            name_column: QUERY_TAG
+            sort_column: QUERY_TAG
+            allowed_calcs_for_dma:
+              - Lag
+              - Range
+              - Siblings
+
+          - unique_name: QUERY_TEXT
+            label: Query Text
+            dataset: Query Details Dimension.dataset
+            key_columns:
+              - QUERY_TEXT
+            name_column: QUERY_TEXT
+            sort_column: QUERY_TEXT
+            allowed_calcs_for_dma:
+              - Lag
+              - Range
+              - Siblings
+
+level_attributes:
+
+  - unique_name: Query ID
+    label: Query ID
+    dataset: Query Details Dimension.dataset
+    key_columns:
+      - QUERY_ID
+    name_column: QUERY_ID
+
+  - unique_name: Query Type
+    label: Query Type
+    dataset: Query Details Dimension.dataset
+    key_columns:
+      - QUERY_TYPE
+    name_column: QUERY_TYPE
+    allowed_calcs_for_dma:
+      - Ancestor
+      - Descendants
+      - Lag
+      - ParallelPeriod
+      - Range
+      - Siblings
+
+modeler_metadata:
+  version: "0"
+  modified: "false"

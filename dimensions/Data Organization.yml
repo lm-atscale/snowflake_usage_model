@@ -1,0 +1,86 @@
+unique_name: Data Organization
+object_type: dimension
+label: Data Organization
+type: standard
+
+hierarchies:
+
+  - unique_name: Data Organization Hierarchy
+    label: Data Organization Hierarchy
+    folder: Data Organization
+
+    levels:
+
+      - unique_name: Database
+
+      - unique_name: Schema
+
+      - unique_name: Table
+
+        secondary_attributes:
+
+          - unique_name: Bytes
+            label: Bytes
+            description: Number of bytes accessed by a scan of the table.
+            dataset: tables.dataset
+            key_columns:
+              - BYTES
+            name_column: BYTES
+            sort_column: BYTES
+
+          - unique_name: Row Count
+            label: Row Count
+            description: Number of rows in the table.
+            dataset: tables.dataset
+            key_columns:
+              - ROW_COUNT
+            name_column: ROW_COUNT
+            sort_column: ROW_COUNT
+
+          - unique_name: Table Owner
+            label: Table Owner
+            description: Name of the role that owns the table.
+            dataset: tables.dataset
+            key_columns:
+              - TABLE_OWNER
+            name_column: TABLE_OWNER
+            sort_column: TABLE_OWNER
+
+          - unique_name: Table Type
+            label: Table Type
+            description: "Indicates the table type. Valid values are BASE TABLE, TEMPORARY\
+              \ TABLE, EXTERNAL TABLE, EVENT TABLE, VIEW, or MATERIALIZED VIEW."
+            dataset: tables.dataset
+            key_columns:
+              - TABLE_TYPE
+            name_column: TABLE_TYPE
+            sort_column: TABLE_TYPE
+
+level_attributes:
+
+  - unique_name: Database
+    label: Database
+    description: Database that the table belongs to.
+    dataset: tables.dataset
+    key_columns:
+      - TABLE_CATALOG_ID
+    name_column: TABLE_CATALOG
+    sort_column: TABLE_CATALOG
+
+  - unique_name: Schema
+    label: Schema
+    description: Schema that the table belongs to.
+    dataset: tables.dataset
+    key_columns:
+      - TABLE_SCHEMA_ID
+    name_column: TABLE_SCHEMA
+    sort_column: TABLE_SCHEMA
+
+  - unique_name: Table
+    label: Table
+    description: Name of the table.
+    dataset: tables.dataset
+    key_columns:
+      - TABLE_ID
+    name_column: TABLE_NAME
+    sort_column: TABLE_NAME

@@ -1,0 +1,75 @@
+unique_name: User
+object_type: dimension
+label: User
+type: standard
+
+hierarchies:
+
+  - unique_name: User Hierarchy
+    label: User Hierarchy
+    folder: User Attributes
+
+    levels:
+
+      - unique_name: User Name
+
+        secondary_attributes:
+
+          - unique_name: Created on
+            label: Created on
+            folder: User Attributes
+            dataset: users.dataset
+            key_columns:
+              - CREATED_ON
+            name_column: CREATED_ON
+
+          - unique_name: Email
+            label: Email
+            folder: User Attributes
+            dataset: users.dataset
+            key_columns:
+              - EMAIL
+            name_column: EMAIL
+
+          - unique_name: First Name
+            label: First Name
+            folder: User Attributes
+            dataset: users.dataset
+            key_columns:
+              - FIRST_NAME
+            name_column: FIRST_NAME
+            sort_column: FIRST_NAME
+
+          - unique_name: Last Name
+            label: Last Name
+            folder: User Attributes
+            dataset: users.dataset
+            key_columns:
+              - LAST_NAME
+            name_column: LAST_NAME
+
+          - unique_name: Last Success Login
+            label: Last Success Login
+            folder: User Attributes
+            dataset: users.dataset
+            key_columns:
+              - LAST_SUCCESS_LOGIN
+            name_column: LAST_SUCCESS_LOGIN
+
+          - unique_name: Login Name
+            label: Login Name
+            folder: User Attributes
+            dataset: users.dataset
+            key_columns:
+              - LOGIN_NAME
+            name_column: LOGIN_NAME
+
+level_attributes:
+
+  - unique_name: User Name
+    label: User Name
+    dataset: users.dataset
+    key_columns:
+      - NAME
+    name_column: NAME
+    sort_column: NAME
