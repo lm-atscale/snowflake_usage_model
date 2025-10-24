@@ -1,0 +1,7 @@
+unique_name: Average Compilation Time
+object_type: metric
+label: Average Compilation Time
+description: Compilation time (in milliseconds)
+calculation_method: average
+dataset: query_history.dataset
+column: COMPILATION_TIME

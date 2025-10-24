@@ -1,0 +1,7 @@
+unique_name: Average Total Elapsed Time
+object_type: metric
+label: Average Total Elapsed Time
+description: Elapsed time (in milliseconds).
+calculation_method: average
+dataset: query_history.dataset
+column: TOTAL_ELAPSED_TIME

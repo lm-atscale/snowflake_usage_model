@@ -1,0 +1,9 @@
+unique_name: Credits Attributed Compute
+object_type: metric
+label: Credits Attributed Compute
+description: Number of credits attributed to this query. Includes only the credit
+  usage for the query execution and doesn’t include any warehouse idle time.
+calculation_method: sum
+unrelated_dimensions_handling: repeat
+dataset: QUERY_ATTRIBUTION_HISTORY.dataset
+column: CREDITS_ATTRIBUTED_COMPUTE

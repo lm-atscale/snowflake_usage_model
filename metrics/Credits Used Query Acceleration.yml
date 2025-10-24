@@ -1,0 +1,8 @@
+unique_name: Credits Used Query Acceleration
+object_type: metric
+label: Credits Used Query Acceleration
+description: 'Number of credits consumed by the Query Acceleration Service to accelerate
+  the query. NULL if the query is not accelerated. '
+calculation_method: sum
+dataset: QUERY_ATTRIBUTION_HISTORY.dataset
+column: CREDITS_USED_QUERY_ACCELERATION

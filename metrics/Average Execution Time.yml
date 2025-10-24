@@ -1,0 +1,7 @@
+unique_name: Average Execution Time
+object_type: metric
+label: Average Execution Time
+description: Execution time (in milliseconds)
+calculation_method: average
+dataset: query_history.dataset
+column: EXECUTION_TIME

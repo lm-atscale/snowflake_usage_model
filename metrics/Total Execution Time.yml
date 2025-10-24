@@ -1,0 +1,7 @@
+unique_name: Total Execution Time
+object_type: metric
+label: Total Execution Time
+description: Execution time (in milliseconds)
+calculation_method: sum
+dataset: query_history.dataset
+column: EXECUTION_TIME

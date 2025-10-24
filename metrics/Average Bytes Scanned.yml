@@ -1,0 +1,7 @@
+unique_name: Average Bytes Scanned
+object_type: metric
+label: Average Bytes Scanned
+description: Average number of bytes scanned by this statement.
+calculation_method: average
+dataset: query_history.dataset
+column: BYTES_SCANNED

@@ -1,0 +1,11 @@
+unique_name: Warehouse Credits Used
+object_type: metric
+label: Warehouse Credits Used
+description: "Total number of credits used for the warehouse in the hour. This is\
+  \ a sum of CREDITS_USED_COMPUTE and CREDITS_USED_CLOUD_SERVICES. This value does\
+  \ not take into account the adjustment for cloud services, and may therefore be\
+  \ greater than the credits that are billed."
+calculation_method: sum
+unrelated_dimensions_handling: empty
+dataset: warehouse_metering_history.dataset
+column: CREDITS_USED

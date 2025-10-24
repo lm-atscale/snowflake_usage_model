@@ -1,0 +1,7 @@
+unique_name: Total Elapsed Time
+object_type: metric
+label: Total Elapsed Time
+description: Elapsed time (in milliseconds).
+calculation_method: sum
+dataset: query_history.dataset
+column: TOTAL_ELAPSED_TIME
