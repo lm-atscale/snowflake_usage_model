@@ -1,0 +1,6 @@
+unique_name: Snowflake_Usage_Model.catalog
+object_type: catalog
+label: Snowflake_Usage_Model
+version: 1.2
+aggressive_agg_promotion: false
+build_speculative_aggs: false
