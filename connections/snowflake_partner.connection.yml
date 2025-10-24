@@ -1,0 +1,6 @@
+unique_name: snowflake_partner.connection
+label: Snowflake Partner
+object_type: connection
+as_connection: Snowflake Partner
+database: SNOWFLAKE
+schema: ACCOUNT_USAGE
