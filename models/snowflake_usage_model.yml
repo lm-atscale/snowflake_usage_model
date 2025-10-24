@@ -1,0 +1,231 @@
+unique_name: snowflake_usage_model
+object_type: model
+label: Snowflake Usage Model
+include_default_drillthrough: true
+visible: true
+
+relationships:
+
+  - unique_name: QUERY_ATTRIBUTION_HISTORY.dataset_Warehouse
+    from:
+      dataset: QUERY_ATTRIBUTION_HISTORY.dataset
+      join_columns:
+        - WAREHOUSE_ID
+    to:
+      dimension: Warehouse
+      level: Warehouse
+
+  - unique_name: QUERY_ATTRIBUTION_HISTORY.dataset_User
+    from:
+      dataset: QUERY_ATTRIBUTION_HISTORY.dataset
+      join_columns:
+        - USER_NAME
+    to:
+      dimension: User
+      level: User Name
+
+  - unique_name: QUERY_ATTRIBUTION_HISTORY.dataset_Date
+    from:
+      dataset: QUERY_ATTRIBUTION_HISTORY.dataset
+      join_columns:
+        - START DATE
+    to:
+      dimension: Date
+      level: Date
+
+  - unique_name: QUERY_ATTRIBUTION_HISTORY.dataset_Query_Details
+    from:
+      dataset: QUERY_ATTRIBUTION_HISTORY.dataset
+      join_columns:
+        - QUERY_ID
+    to:
+      dimension: Query Details
+      level: Query ID
+
+  - unique_name: warehouse_metering_history.dataset_Warehouse
+    from:
+      dataset: warehouse_metering_history.dataset
+      join_columns:
+        - WAREHOUSE_ID
+    to:
+      dimension: Warehouse
+      level: Warehouse
+
+  - unique_name: warehouse_metering_history.dataset_Date
+    from:
+      dataset: warehouse_metering_history.dataset
+      join_columns:
+        - START_DATE
+    to:
+      dimension: Date
+      level: Date
+
+  - unique_name: query_history.dataset_Data_Organization
+    from:
+      dataset: query_history.dataset
+      join_columns:
+        - SCHEMA_ID
+    to:
+      dimension: Data Organization
+      level: Schema
+
+  - unique_name: query_history.dataset_Warehouse
+    from:
+      dataset: query_history.dataset
+      join_columns:
+        - WAREHOUSE_ID
+    to:
+      dimension: Warehouse
+      level: Warehouse
+
+  - unique_name: query_history.dataset_User
+    from:
+      dataset: query_history.dataset
+      join_columns:
+        - USER_NAME
+    to:
+      dimension: User
+      level: User Name
+
+  - unique_name: query_history.dataset_Date
+    from:
+      dataset: query_history.dataset
+      join_columns:
+        - START_DATE
+    to:
+      dimension: Date
+      level: Date
+
+  - unique_name: query_history.dataset_Query_Details
+    from:
+      dataset: query_history.dataset
+      join_columns:
+        - QUERY_ID
+    to:
+      dimension: Query Details
+      level: Query ID
+
+metrics:
+
+  - unique_name: Average Bytes Scanned
+    folder: Query Level Stats - Averages
+
+  - unique_name: Average Compilation Time
+    folder: Query Level Stats - Averages
+
+  - unique_name: Average Execution Time
+    folder: Query Level Stats - Averages
+
+  - unique_name: Average Number of Rows Produced
+    folder: Query Level Stats - Averages
+
+  - unique_name: Average Total Elapsed Time
+    folder: Query Level Stats - Averages
+
+  - unique_name: Credits Attributed Compute
+    folder: Query Level Cost Metrics
+
+  - unique_name: Credits Used Query Acceleration
+    folder: Query Level Cost Metrics
+
+  - unique_name: Number of Queries
+    folder: Query Level Stats - Counts
+
+  - unique_name: Total Bytes Scanned
+    folder: Query Level Stats - Totals
+
+  - unique_name: Total Elapsed Time
+    folder: Query Level Stats - Totals
+
+  - unique_name: Total Execution Time
+    folder: Query Level Stats - Totals
+
+  - unique_name: Total Number of Rows Produced
+    folder: Query Level Stats - Totals
+
+  - unique_name: Warehouse Credits Used
+    folder: Warehouse Level Metrics
+
+  - unique_name: Attributed Credits Idle Time
+    folder: Query Level Cost Metrics
+
+  - unique_name: Cost Per Query
+    folder: Query Level Cost Metrics
+
+  - unique_name: Total Credits Attributed
+    folder: Query Level Cost Metrics
+
+  - unique_name: Warehouse Total Cost
+    folder: Warehouse Level Metrics
+
+aggregates:
+
+  - unique_name: Query Details
+    label: Query Details
+    attributes:
+
+      - name: Query Type
+        dimension: Query Details
+
+      - name: QUERY_TEXT
+        dimension: Query Details
+
+      - name: Query Tag_2
+        dimension: Query Details
+
+      - name: Atscale Query ID
+        dimension: Query Details
+
+      - name: Atscale Query Flag
+        dimension: Query Details
+
+      - name: Query ID
+        dimension: Query Details
+
+      - name: Atscale User Name
+        dimension: Query Details
+        partition: name+key
+
+  - unique_name: User Attributes
+    label: User Attributes
+    attributes:
+
+      - name: First Name
+        dimension: User
+
+      - name: Login Name
+        dimension: User
+
+      - name: Created on
+        dimension: User
+
+      - name: User Name
+        dimension: User
+        partition: name+key
+
+      - name: Email
+        dimension: User
+
+      - name: Last Success Login
+        dimension: User
+
+      - name: Last Name
+        dimension: User
+
+  - unique_name: Dates_UDA
+    label: Dates_UDA
+    attributes:
+
+      - name: Date
+        dimension: Date
+        partition: name+key
+
+      - name: Month Number
+        dimension: Date
+
+      - name: Month
+        dimension: Date
+        partition: name+key
+
+      - name: Year
+        dimension: Date
