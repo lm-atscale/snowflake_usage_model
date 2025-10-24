@@ -1,0 +1,7 @@
+unique_name: Total Credits Attributed
+object_type: metric_calc
+label: Total Credits Attributed
+description: The total cost for an accelerated query is the sum of credits_used_query_acceleration
+  and the credits_attributed_compute column.
+expression: "[Measures].[Credits Used Query Acceleration] + [Measures].[Credits Attributed\
+  \ Compute]"

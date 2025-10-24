@@ -1,0 +1,9 @@
+unique_name: Cost Per Query
+object_type: metric_calc
+label: Cost Per Query
+description: "To convert Snowflake credits to a dollar value, you need to multiply\
+  \ the total credits used by your organization's negotiated per-credit rate. \n\n\
+  This is the cost based on number of credits times $2.00 per credit. \n\nEdit this\
+  \ formula if you want to use a different price per credit."
+expression: "[Measures].[Total Credits Attributed]* 2.00"
+format: "$#,##0.00"

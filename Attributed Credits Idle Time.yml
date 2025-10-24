@@ -1,0 +1,25 @@
+unique_name: Attributed Credits Idle Time
+object_type: metric_calc
+label: Attributed Credits Idle Time
+description: |-
+  Attributed Credits per Query Including Idle Time based on this page:
+
+  https://docs.snowflake.com/en/user-guide/cost-attributing#calculating-the-cost-of-user-queries-for-the-last-month
+
+  Idle time is distributed among the users in proportion to their usage.
+expression: |
+  -- Attributed Compute Credits (per user)  ==  u.credits / SUM(all users' credits) * total warehouse credits
+  IIF(
+    ISEMPTY([Measures].[Total Credits Attributed]),
+    NULL,
+    IIF(
+      ALLMEMBEREXCEPT( ([Measures].[Total Credits Attributed]), { [Date].[Date Hierarchy] } ) = 0,
+      NULL,
+      DIVIDE(
+        [Measures].[Total Credits Attributed],
+        ALLMEMBEREXCEPT( ([Measures].[Total Credits Attributed]), { [Date].[Date Hierarchy] } )
+      )
+      *
+      ALLMEMBEREXCEPT( ([Measures].[Warehouse Credits Used]), { [Date].[Date Hierarchy] } )
+    )
+  )
